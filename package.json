@@ -1,0 +1,37 @@
+{
+  "name": "auth-tailwind",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Anjianto/auth-tailwind"
+  },
+  "keywords": [
+    "blitz",
+    "blitzjs",
+    "auth",
+    "authentication",
+    "tailwind",
+    "tailwindcss",
+    "tailwind css",
+    "auth-tailwind",
+    "auth tailwind"
+  ],
+  "author": "Anjianto <anjianto06@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Anjianto/auth-tailwind/issues"
+  },
+  "homepage": "https://github.com/Anjianto/auth-tailwind#readme",
+  "dependencies": {
+    "@blitzjs/installer": "0.35.0-canary.5",
+    "jscodeshift": "^0.11.0"
+  },
+  "devDependencies": {
+    "@types/jscodeshift": "^0.7.2"
+  }
+}
