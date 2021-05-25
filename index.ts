@@ -37,6 +37,8 @@ export default RecipeBuilder()
     explanation:
       "Auth Tailwind requires a couple of dependencies including PostCSS for removing unused styles from the production bundle",
     packages: [
+      { name: "@headlessui/react", version: "1.2.0" },
+      { name: "@heroicons/react", version: "1.0.1" },
       { name: "tailwindcss", version: "2.1.2", isDevDep: true },
       { name: "autoprefixer", version: "10", isDevDep: true },
       { name: "postcss", version: "8", isDevDep: true },
@@ -47,17 +49,17 @@ export default RecipeBuilder()
     stepId: "addTailwindConfig",
     stepName: "Tailwind Config Files",
     explanation:
-      "Adds config files to give you a good starting point and remove .template from filename",
+      "Add config files to give you a good starting point and remove .template from filename",
     targetDirectory: ".",
     templatePath: join(__dirname, "templates", "tailwindcss"),
     templateValues: {},
   })
   .addNewFilesStep({
-    stepId: "addStyles",
+    stepId: "addtyles",
     stepName: "Stylesheet",
-    explanation: `Adds a root CSS stylesheet where Tailwind is imported and where you can add global styles`,
+    explanation: `Add a root CSS stylesheet where Tailwind is imported and where you can add global styles`,
     targetDirectory: "./app/core/styles",
-    templatePath: join(__dirname, "templates", "styles"),
+    templatePath: join(__dirname, "templates", "app", "core", "styles"),
     templateValues: {},
   })
   .addTransformFilesStep({
@@ -76,17 +78,81 @@ export default RecipeBuilder()
   .addNewFilesStep({
     stepId: "addCoreFile",
     stepName: "Core Files",
-    explanation: "Adds core files to give you a good development",
+    explanation: "Add core files to give you a good development",
     targetDirectory: "./app/core/components",
-    templatePath: join(__dirname, "templates", "core", useForm),
+    templatePath: join(
+      __dirname,
+      "templates",
+      "app",
+      "core",
+      "components",
+      "_forms",
+      useForm
+    ),
+    templateValues: {},
+  })
+  .addNewFilesStep({
+    stepId: "addBlitzLogoFile",
+    stepName: "Logo Files",
+    explanation: "Add Blitz logo files",
+    targetDirectory: "./app/core/components",
+    templatePath: join(
+      __dirname,
+      "templates",
+      "app",
+      "core",
+      "components",
+      "Logo"
+    ),
     templateValues: {},
   })
   .addNewFilesStep({
     stepId: "addAuthFile",
     stepName: "Auth Files",
-    explanation: "Adds auth files to give you a secure app",
+    explanation: "Add auth files to give you a secure app",
     targetDirectory: "./app/auth",
-    templatePath: join(__dirname, "templates", "auth"),
+    templatePath: join(__dirname, "templates", "app", "auth"),
+    templateValues: {},
+  })
+  .addNewFilesStep({
+    stepId: "addCustomComponents",
+    stepName: "Add Custom Components",
+    explanation:
+      "Add custom components files to give you a Home Page Beautifull",
+    targetDirectory: "./app/components",
+    templatePath: join(__dirname, "templates", "app", "components"),
+    templateValues: {},
+  })
+  .addNewFilesStep({
+    stepId: "addDashboard",
+    stepName: "Add Dashboard",
+    explanation: "Add Dashboard",
+    targetDirectory: "./app/dashboard",
+    templatePath: join(__dirname, "templates", "app", "dashboard"),
+    templateValues: {},
+  })
+  .addNewFilesStep({
+    stepId: "addConfig",
+    stepName: "Add Config",
+    explanation: "Add auth-tailwind Config",
+    targetDirectory: "./config",
+    templatePath: join(__dirname, "templates", "config"),
+    templateValues: {},
+  })
+  .addNewFilesStep({
+    stepId: "addSchema",
+    stepName: "Add Schema",
+    explanation: "Add Schema for db",
+    targetDirectory: "./db",
+    templatePath: join(__dirname, "templates", "db"),
+    templateValues: {},
+  })
+  .addNewFilesStep({
+    stepId: "addCustomHomePage",
+    stepName: "Add Custom Home Page",
+    explanation: "Add custom Home Page",
+    targetDirectory: "./app/pages",
+    templatePath: join(__dirname, "templates", "app", "pages"),
     templateValues: {},
   })
   .build();
