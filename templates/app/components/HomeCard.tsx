@@ -3,8 +3,8 @@ import Link from "next/link"
 
 export default function HomeCard() {
   return (
-    <main className="bg-gray-50 min-h-screen max-h-screen h-screen flex justify-center items-center">
-      <div className="bg-white shadow overflow-hidden sm:rounded-lg w-1/2">
+    <main className="my-8 flex justify-center items-center px-4 md:px-0 xl:h-screen xl:min-h-screen xl:max-h-screen">
+      <div className="bg-white shadow overflow-hidden sm:rounded-lg md:w-2/3 lg:w-1/2">
         <div className="px-4 py-5 sm:px-6 bg-gray-100">
           <Logo className="fill-[#6700eb] w-[100px] h-[50px] lg:w-[150px] lg:h-[75px] mx-auto mb-4" />
         </div>
@@ -20,7 +20,7 @@ export default function HomeCard() {
             </strong>
           </p>
 
-          <pre className="p-3">
+          <pre className="p-3 overflow-x-auto">
             <code className="inline-block font-mono text-sm p-1 rounded-sm bg-[#EDF2F7] text-[#1A202C]">
               blitz generate all project name:string
             </code>
