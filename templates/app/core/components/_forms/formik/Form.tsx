@@ -1,5 +1,5 @@
-import {useState, ReactNode, PropsWithoutRef} from "react"
-import {Formik, FormikProps} from "formik"
+import { useState, ReactNode, PropsWithoutRef } from "react"
+import { Formik, FormikProps } from "formik"
 import * as z from "zod"
 
 export interface FormProps<S extends z.ZodType<any, any>>
@@ -8,6 +8,7 @@ export interface FormProps<S extends z.ZodType<any, any>>
   children?: ReactNode
   /** Text to display in the submit button */
   submitText?: string
+  buttonClassName?: string
   schema?: S
   onSubmit: (values: z.infer<S>) => Promise<void | OnSubmitResult>
   initialValues?: FormikProps<z.infer<S>>["initialValues"]
@@ -26,6 +27,7 @@ export function Form<S extends z.ZodType<any, any>>({
   schema,
   initialValues,
   onSubmit,
+  buttonClassName,
   className,
   ...props
 }: FormProps<S>) {
@@ -41,8 +43,8 @@ export function Form<S extends z.ZodType<any, any>>({
           return error.formErrors.fieldErrors
         }
       }}
-      onSubmit={async (values, {setErrors}) => {
-        const {FORM_ERROR, ...otherErrors} = (await onSubmit(values)) || {}
+      onSubmit={async (values, { setErrors }) => {
+        const { FORM_ERROR, ...otherErrors } = (await onSubmit(values)) || {}
 
         if (FORM_ERROR) {
           setFormError(FORM_ERROR)
@@ -53,7 +55,7 @@ export function Form<S extends z.ZodType<any, any>>({
         }
       }}
     >
-      {({handleSubmit, isSubmitting}) => (
+      {({ handleSubmit, isSubmitting }) => (
         <form
           onSubmit={handleSubmit}
           className={["form", className ? className : ""].join(" ")}
@@ -63,13 +65,13 @@ export function Form<S extends z.ZodType<any, any>>({
           {children}
 
           {formError && (
-            <div role="alert" style={{color: "red"}}>
+            <div role="alert" style={{ color: "red" }}>
               {formError}
             </div>
           )}
 
           {submitText && (
-            <button type="submit" disabled={isSubmitting}>
+            <button type="submit" disabled={isSubmitting} className={buttonClassName ?? ""}>
               {submitText}
             </button>
           )}

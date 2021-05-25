@@ -13,10 +13,14 @@ module.exports = {
         alegreya: ["Alegreya", "serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      screens: {
+        "1-5xl": "1440px",
+        "2xl": "2560px",
+      },
     },
   },
   variants: {
     extend: {},
   },
   plugins: [require("@tailwindcss/custom-forms")],
-}
+};
