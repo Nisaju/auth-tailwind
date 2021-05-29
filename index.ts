@@ -29,8 +29,8 @@ export default RecipeBuilder()
   .setDescription(
     "This will install all necessary dependencies and configure Auth Tailwind for use."
   )
-  .setOwner("Anjianto <anjianto06@gmail.com>")
-  .setRepoLink("https://github.com/Anjianto/auth-tailwind")
+  .setOwner("Nisaju <anjianto06@gmail.com>")
+  .setRepoLink("https://github.com/Nisaju/auth-tailwind")
   .addAddDependenciesStep({
     stepId: "addDeps",
     stepName: "Install dependencies",
