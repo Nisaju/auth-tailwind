@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Anjianto/auth-tailwind"
+    "url": "https://github.com/Nisaju/auth-tailwind"
   },
   "keywords": [
     "blitz",
@@ -21,12 +21,12 @@
     "auth-tailwind",
     "auth tailwind"
   ],
-  "author": "Anjianto <anjianto06@gmail.com>",
+  "author": "Nisaju <anjianto06@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Anjianto/auth-tailwind/issues"
+    "url": "https://github.com/Nisaju/auth-tailwind/issues"
   },
-  "homepage": "https://github.com/Anjianto/auth-tailwind#readme",
+  "homepage": "https://github.com/Nisaju/auth-tailwind#readme",
   "dependencies": {
     "@blitzjs/installer": "0.35.0-canary.5",
     "jscodeshift": "^0.11.0"
